@@ -402,6 +402,17 @@ INNER JOIN Actors ON Characters.actor_id = Actors.id
 WHERE Actors.last_name = "Caine"
 ;
 
-.print "======================================================================================="
-.print "As a guest, I want to see the movies which a single actor, Michael Caine, has acted in"
-.print "======================================================================================="
+.print "============================================================================================================================"
+.print "As a guest, I want to see The Dark Knight Rises' cast including each actor's name and the name of the character they portray."
+.print "============================================================================================================================"
+SELECT Movies.title, Movies.years_released, Actors.first_name, Actors.last_name, Characters.character_name 
+FROM Movies
+INNER JOIN Characters ON Movies.id = Characters.movie_id
+INNER JOIN Actors ON Characters.actor_id = Actors.id
+WHERE title = "The Dark Knight Rises" 
+; 
+
+.print "====================================================================="
+.print "As a guest, I want to see the movies which Warner Bros. has produced."
+.print "====================================================================="
+SELECT
