@@ -121,18 +121,11 @@
 -- TODO!
 
 -- Prints a header for the movies output
-.print "Movies"
-.print "======"
-.print ""
 
 -- The SQL statement for the movies output
 -- TODO!
 
 -- Prints a header for the cast output
-.print ""
-.print "Top Cast"
-.print "========"
-.print ""
 
 
 -- The SQL statement for the cast output
@@ -368,19 +361,37 @@ VALUES (
 DROP TABLE IF EXISTS Studios;
 CREATE TABLE Studios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    studio_name TEXT,
+    studio_name TEXT
 );
 
-INSERT INTO studios (
+INSERT INTO Studios (
     studio_name
 )
 VALUES (
     "Warner Bros."
 );
 
---------------------------OUTPUT------------------------------
+--------------------------------OUTPUT------------------------------
+--------------------------------------------------------------------
 
-.print "========================================================"
+.mode column
+.headers off
+
+.print "==========================================================="
 .print "Movies"
-.print "========================================================"
-SELECT Movies.title, Movies.years_released, Movies.rating, Movies.
+.print "==========================================================="
+SELECT Movies.title, Movies.years_released, Movies.rating, Studios.studio_name FROM Movies
+INNER JOIN Studios ON Movies.studio_id = Studios.id
+;
+
+.print "==========================================================="
+.print "Top Cast"
+.print "==========================================================="
+SELECT Movies.title, Actors.first_name, Actors.last_name, Characters.character_name FROM Movies
+INNER JOIN Characters ON Movies.id = Characters.movie_id
+INNER JOIN Actors ON Characters.actor_id = Actors.id
+;
+
+.print "==========================================================="
+.print "As a guest, I want to see the movies which a single actor, Christian Bale, has acted in"
+.print "==========================================================="
