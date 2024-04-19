@@ -139,8 +139,8 @@
 -- TODO!
 
 
---DELIVERABLES
---JUSTIN CHO--
+-----------------------------------------------------------DELIVERABLES----------------------
+-----------------------------------------------------------JUSTIN CHO------------------------
 
 --TABLE FOR MOVIES--
 
@@ -187,7 +187,7 @@ CREATE TABLE Characters (
     FOREIGN KEY (actor_id) REFERENCES Actors(id)
 );
 
----Batman Begins CHARACTERS---
+--- Batman Begins CHARACTERS---
 
 INSERT INTO Characters (
     character_name, movie_id, actor_id
@@ -289,12 +289,98 @@ VALUES (
 
 --TABLE FOR ACTORS--
 
-DROP TABLE IF EXISTS ACTORS;
-CREATE TABLE ACTORS (
+DROP TABLE IF EXISTS Actors;
+CREATE TABLE Actors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name TEXT,
-    last_name TEXT,
-    actor_id INTEGER,
-    FOREIGN KEY (movie_id) REFERENCES Movies(id),
-    FOREIGN KEY (actor_id) REFERENCES Actors(id)
+    last_name TEXT
 );
+
+INSERT INTO Actors (
+    first_name, last_name
+)
+VALUES (
+    "Christian", "Bale"
+);
+INSERT INTO Actors (
+    first_name, last_name
+)
+VALUES (
+    "Michael", "Caine"
+);
+INSERT INTO Actors (
+    first_name, last_name
+)
+VALUES (
+    "Liam", "Neeson"
+);
+INSERT INTO Actors (
+    first_name, last_name
+)
+VALUES (
+    "Katie", "Holmes"
+);
+INSERT INTO Actors (
+    first_name, last_name
+)
+VALUES (
+    "Gary", "Oldman"
+);
+INSERT INTO Actors (
+    first_name, last_name
+)
+VALUES (
+    "Heath", "Ledger"
+);
+INSERT INTO Actors (
+    first_name, last_name
+)
+VALUES (
+    "Aaron", "Eckhart"
+);
+INSERT INTO Actors (
+    first_name, last_name
+)
+VALUES (
+    "Maggie", "Gyllenhaal"
+);
+INSERT INTO Actors (
+    first_name, last_name
+)
+VALUES (
+    "Tom", "Hardy"
+);
+INSERT INTO Actors (
+    first_name, last_name
+)
+VALUES (
+    "Joseph", "Gordon-Levitt"
+);
+INSERT INTO Actors (
+    first_name, last_name
+)
+VALUES (
+    "Anne", "Hathaway"
+);
+
+--TABLE FOR STUDIOS--
+
+DROP TABLE IF EXISTS Studios;
+CREATE TABLE Studios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    studio_name TEXT,
+);
+
+INSERT INTO studios (
+    studio_name
+)
+VALUES (
+    "Warner Bros."
+);
+
+--------------------------OUTPUT------------------------------
+
+.print "========================================================"
+.print "Movies"
+.print "========================================================"
+SELECT Movies.title, Movies.years_released, Movies.rating, Movies.
