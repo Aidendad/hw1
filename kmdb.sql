@@ -393,7 +393,7 @@ INNER JOIN Actors ON Characters.actor_id = Actors.id
 ;
 
 .print "======================================================================================="
-.print "As a guest, I want to see the movies which a single actor, Michael Caine, has acted in"
+.print "As a guest, I want to see the movies which a single actor, Michael Caine, has acted in."
 .print "======================================================================================="
 SELECT Actors.first_name, Actors.last_name, Movies.title, Movies.years_released, Characters.character_name
 FROM Movies
@@ -415,4 +415,10 @@ WHERE title = "The Dark Knight Rises"
 .print "====================================================================="
 .print "As a guest, I want to see the movies which Warner Bros. has produced."
 .print "====================================================================="
-SELECT
+SELECT Studios.studio_name, Movies.title, Movies.years_released
+FROM Studios
+INNER JOIN Movies ON Movies.studio_id = Studios.id
+WHERE studio_name = "Warner Bros."
+;
+
+-----------------------------------------------------------------------THANK YOU!---------------------------------------------------------------------
