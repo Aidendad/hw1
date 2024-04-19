@@ -137,3 +137,41 @@
 
 -- The SQL statement for the cast output
 -- TODO!
+
+
+--DELIVERABLES
+--JUSTIN CHO--
+
+--TABLE FOR MOVIES--
+
+DROP TABLE IF EXISTS Movies;
+CREATE TABLE Movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    years_released INTEGER,
+    rating TEXT,
+    studio_id INTEGER
+);
+
+INSERT INTO Movies (
+    title, years_released, rating, studio_id
+)
+VALUES (
+    "Batman Begins", 2005 , "PG-13", 1
+);
+
+INSERT INTO Movies (
+    title, years_released, rating, studio_id
+)
+VALUES (
+    "The Dark Knight", 2008 , "PG-13", 1
+);
+
+INSERT INTO Movies (
+    title, years_released, rating, studio_id
+)
+VALUES (
+    "The Dark Knight Rises", 2012 , "PG-13", 1
+);
+
+
