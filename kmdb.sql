@@ -175,3 +175,15 @@ VALUES (
 );
 
 
+--TABLE FOR CHARACTERS--
+
+DROP TABLE IF EXISTS Characters;
+CREATE TABLE Characters (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    character_name TEXT,
+    movie_id INTEGER,
+    actor_id INTEGER,
+    FOREIGN KEY (movie_id) REFERENCES Movies(id),
+    FOREIGN KEY (actor_id) REFERENCES Actors(id)
+);
+
