@@ -392,6 +392,16 @@ INNER JOIN Characters ON Movies.id = Characters.movie_id
 INNER JOIN Actors ON Characters.actor_id = Actors.id
 ;
 
-.print "==========================================================="
-.print "As a guest, I want to see the movies which a single actor, Christian Bale, has acted in"
-.print "==========================================================="
+.print "======================================================================================="
+.print "As a guest, I want to see the movies which a single actor, Michael Caine, has acted in"
+.print "======================================================================================="
+SELECT Actors.first_name, Actors.last_name, Movies.title, Movies.years_released, Characters.character_name
+FROM Movies
+INNER JOIN Characters ON Movies.id = Characters.movie_id
+INNER JOIN Actors ON Characters.actor_id = Actors.id
+WHERE Actors.last_name = "Caine"
+;
+
+.print "======================================================================================="
+.print "As a guest, I want to see the movies which a single actor, Michael Caine, has acted in"
+.print "======================================================================================="
