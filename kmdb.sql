@@ -187,3 +187,114 @@ CREATE TABLE Characters (
     FOREIGN KEY (actor_id) REFERENCES Actors(id)
 );
 
+---Batman Begins CHARACTERS---
+
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Bruce Wayne", 1, 1
+);
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Alfred", 1, 2
+);
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Ra's Al Ghul", 1, 3
+);
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Rachel Dawes", 1, 4
+);
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Commissioner Gordon", 1, 5
+);
+
+--- Dark Knight CHARACTERS---
+
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Bruce Wayne", 2, 1
+);
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Joker", 2, 6
+);
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Harvey Dent", 2, 7
+);
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Alfred", 2, 2
+);
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Rachel Dawes", 2, 8
+);
+
+--- Dark Knight Rises CHARACTERS---
+
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Bruce Wayne", 3, 1
+);
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Commissioner Gordon", 3, 5
+);
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Bane", 3, 9
+);
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "John Blake", 3, 10
+);
+INSERT INTO Characters (
+    character_name, movie_id, actor_id
+)
+VALUES (
+    "Selina Kyle", 3, 11
+);
+
+
+--TABLE FOR ACTORS--
+
+DROP TABLE IF EXISTS ACTORS;
+CREATE TABLE ACTORS (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    actor_id INTEGER,
+    FOREIGN KEY (movie_id) REFERENCES Movies(id),
+    FOREIGN KEY (actor_id) REFERENCES Actors(id)
+);
